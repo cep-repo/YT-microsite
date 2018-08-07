@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+# gatsby prod dir
+public/
+
+
+.DS_Store
+.cache/
