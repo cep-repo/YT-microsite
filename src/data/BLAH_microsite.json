@@ -12,5 +12,6 @@
     "max_item_name": "Many of my teachers want me to explain my answers - why I think what I think", 
     "max_factor_name": "Relationships with Peers", 
     "response_rate": 63, 
-    "min_factor_description": "This summary measure describes the degree to which students believe that the school-wide culture fosters respect and fairness."
+    "min_factor_description": "This summary measure describes the degree to which students believe that the school-wide culture fosters respect and fairness.",
+    "wordcloud_url": "https://s3.amazonaws.com/CEP_IGNITE_PROD/wordcloud.png"
 }

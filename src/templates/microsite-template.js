@@ -60,6 +60,11 @@ const Title = props =>
 		<h1 className={styles.title}>{props.school_name}</h1>
 			<h2 className={styles.title}> {props.product}</h2>
 	</div>
+const WordCloud = props =>
+	<div>
+		<img src={props.wordcloud_url}/>
+	</div>
+
 
 export default ({ data }) =>{
 	return(
@@ -101,6 +106,9 @@ export default ({ data }) =>{
 		  school_name={data.dataJson.school_name}
 		  sad_gif={data.dataJson.sad_gif}
 		/>
+		<WordCloud
+			wordcloud_url={data.dataJson.wordcloud_url}
+		/>
 
 	  </div>
 	)
@@ -108,8 +116,8 @@ export default ({ data }) =>{
 
 
 export const query = graphql`
-  query LayoutQuery {
-    dataJson {
+  query BlogPostQuery($slug: String!) {
+    dataJson(fields: { slug: { eq: $slug } }) {
       max_factor_name
       response_count
       school_name
@@ -124,6 +132,7 @@ export const query = graphql`
 	  max_factor_description
 	  min_factor_description
 	  response_rate_str
+	  wordcloud_url
     }
 }
 `
