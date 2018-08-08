@@ -1,78 +1,98 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400);
 
 
+.userItem {
+  text-align:center;
+  background-color: #288fbd;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 12px auto;
+}
+.userFactor {
+  text-align:center;
+  background-color: #f99c25;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 12px auto;
+}
 .user {
-  display: flex;
-  align-items: center;
-  margin: 0 auto 12px auto;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 12px auto;
 }
 
 .user:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .avatar {
-  flex: 0 0 300px;
-  width: 300px;
-  height: 300px;
-  margin: 0;
+  flex: 0 0 300px;
+  width: 300px;
+  height: 300px;
+  margin: 0;
 }
 
 .descriptionItem {
-  background-color: #288fbd  ;
-  flex: 1;
-  margin-left: 18px;
-  padding: 12px;
+  text-align:center;
+  flex: 1;
+  margin-left: 18px;
+  padding: 12px;
 }
 .descriptionFactor {
-  background-color: #f99c25  ;
-  flex: 1;
-  margin-right: 18px;
-  padding: 12px;
+  text-align:center;
+  flex: 1;
+  margin-right: 18px;
+  padding: 12px;
 }
 
 .username {
-  margin: 0 0 12px 0;
-  padding: 0;
+  margin: 0 0 12px 0;
+  padding: 0;
 }
 
 .excerpt {
-  margin: 0;
+  margin: 0;
 }
 
 .title {
-  font-family: verdana;
-    font-size: 20px;
-  color: white
+	font-family: verdana;
+    font-size: 36px;
+	text-align:center;
+}
+.titleSection {
+	font-family: verdana;
+    font-size: 20px;
+	text-align:center;
 }
 
 
 
-.chart-text {
-  font-family: verdana;
-  fill: #000;
-  -moz-transform: translateY(0.25em);
-  -ms-transform: translateY(0.25em);
-  -webkit-transform: translateY(0.25em);
-  transform: translateY(0.25em);
+.charttext {
+  font-family: verdana;
+  fill: #000;
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -webkit-transform: translateY(0.25em);
+  transform: translateY(0.25em);
 }
 
-.chart-number {
-  font-size: 0.6em;
-  line-height: 1;
-  text-anchor: middle;
-  -moz-transform: translateY(-0.25em);
-  -ms-transform: translateY(-0.25em);
-  -webkit-transform: translateY(-0.25em);
-  transform: translateY(-0.25em);
+.chartnumber {
+  font-size: 0.6em;
+  line-height: 1;
+  text-anchor: middle;
+  -moz-transform: translateY(-0.25em);
+  -ms-transform: translateY(-0.25em);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
 }
 
-.chart-label {
-  font-size: 0.2em;
-  text-transform: uppercase;
-  text-anchor: middle;
-  -moz-transform: translateY(0.7em);
-  -ms-transform: translateY(0.7em);
-  -webkit-transform: translateY(0.7em);
-  transform: translateY(0.7em);
+.chartlabel {
+  font-size: 0.15em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  -moz-transform: translateY(0.7em);
+  -ms-transform: translateY(0.7em);
+  -webkit-transform: translateY(0.7em);
+  transform: translateY(0.7em);
 }
