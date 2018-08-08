@@ -55,31 +55,46 @@ const Response = props =>
 		  </svg>
 	  </div>
     </div>
+const FamResponse = props =>
+    <div className={styles.user}>
+      <p className={styles.description}><b>{props.response_count}</b> {props.school_name} stakeholders responded to the YouthTruth <b>{props.product}</b>.</p>
+    </div>
 const Title = props =>
 	<div>
 		<h1 className={styles.title}>{props.school_name}</h1>
 			<h2 className={styles.title}> {props.product}</h2>
 	</div>
 const WordCloud = props =>
-	<div>
-		<img src={props.wordcloud_url}/>
+	<div className={styles.user}>
+	  <div className={styles.descriptionFactor}>
+		<h1 className={styles.titleSection}>Word Cloud from {props.school_name} Comments</h1>
+		<img src={props.wordcloud_url}></img>
+	  </div>
 	</div>
 
 
 export default ({ data }) =>{
+	let response_comp
+	if (data.dataJson.product=="family survey"){
+		response_comp =<FamResponse
+				response_count={data.dataJson.response_count}
+				school_name={data.dataJson.school_name}
+				product={data.dataJson.product}/> 
+	}else{
+		response_comp = <Response
+				  response_count={data.dataJson.response_count}
+				  response_rate={data.dataJson.response_rate}
+				  school_name={data.dataJson.school_name}
+				  response_rate_str={data.dataJson.response_rate_str}
+				  product={data.dataJson.product}/>
+	}
 	return(
 	  <div>
 		<Title
 		  school_name={data.dataJson.school_name}
 		  product={data.dataJson.product}
 		/>
-		<Response
-		  response_count={data.dataJson.response_count}
-		  response_rate={data.dataJson.response_rate}
-		  school_name={data.dataJson.school_name}
-		  response_rate_str={data.dataJson.response_rate_str}
-		  product={data.dataJson.product}
-		/>
+		{response_comp}
 		<SectionHigh
 		  max_factor_name={data.dataJson.max_factor_name}
 		  school_name={data.dataJson.school_name}
@@ -107,6 +122,7 @@ export default ({ data }) =>{
 		  sad_gif={data.dataJson.sad_gif}
 		/>
 		<WordCloud
+			school_name={data.dataJson.school_name}
 			wordcloud_url={data.dataJson.wordcloud_url}
 		/>
 

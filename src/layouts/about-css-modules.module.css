@@ -15,6 +15,7 @@
   align-items: center;
   margin: 0 auto 12px auto;
 }
+
 .user {
   text-align:center;
   display: flex;
@@ -31,6 +32,9 @@
   width: 300px;
   height: 300px;
   margin: 0;
+}
+.cloud {
+  align-items: center;
 }
 
 .descriptionItem {
