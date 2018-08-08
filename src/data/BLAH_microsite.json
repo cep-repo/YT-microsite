@@ -1,9 +1,16 @@
 {
-    "factor_high_name": "Relationships with Teachers", 
-    "response_count": "350", 
-    "school_name": "School A", 
-    "factor_low_name": "School Culture", 
-    "item_low_name": "I feel engaged at school.", 
-    "item_high_name": "I feel like the culture at my school is welcoming.", 
-    "response_rate": "44%"
+    "product": "Overall School Experience", 
+    "min_factor_name": "School Culture", 
+    "response_rate_str": "63 37", 
+    "school_name": "Brockton High School", 
+    "min_item_name": "Many of my teachers connect what students are learning in class to life outside of the classroom", 
+    "max_factor_description": "This summary measure describes the degree to which students have supportive, collaborative relationships with their classmates.", 
+    "sad_gif": "https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993", 
+    "level": "high", 
+    "response_count": "2549", 
+    "happy_gif": "https://media1.tenor.com/images/80556186b94ecaff7a570a9c8148fb00/tenor.gif?itemid=4535602", 
+    "max_item_name": "Many of my teachers want me to explain my answers - why I think what I think", 
+    "max_factor_name": "Relationships with Peers", 
+    "response_rate": 63, 
+    "min_factor_description": "This summary measure describes the degree to which students believe that the school-wide culture fosters respect and fairness."
 }

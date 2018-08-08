@@ -1,95 +1,130 @@
 import React from "react";
 import styles from "../layouts/about-css-modules.module.css";
+console.log(styles);
+
+
 
 const SectionHigh = props =>
-    <div className={styles.user}>
-        <p className={styles.descriptionFactor}> Students at <b>{props.school_name}</b> rated <b>{props.factor_high_name}</b> most positively when compared to other high schools in that also took the Overall School Experience survey.</p>
-        <img className={styles.avatar} src="https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993"></img>
-    </div>
-
+	<div className={styles.userFactor}>
+	  <div className={styles.descriptionFactor}>
+		<h1 className={styles.titleSection}> Highest Rated Summary Measure </h1>
+		<p  className={styles.excerpt}> Respondents at <b>{props.school_name}</b> rated <b>{props.max_factor_name}</b> most positively when compared to other {props.level} schools in that also took the <b>{props.product}</b>. {props.max_factor_description} </p>
+		<img className={styles.avatar} src={props.happy_gif}></img>
+	  </div>
+	</div>
 const QuestionHigh = props =>
-    <div className={styles.user}>
-        <img className={styles.avatar} src="https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993"></img>
-        <p className={styles.descriptionItem}> The <b>least positively rated</b> question by students at <b>{props.school_name}</b> was <b>{props.item_high_name}</b> </p>
-    </div>
-
+    <div className={styles.userItem}>
+		<div className={styles.descriptionItem}>
+		  <h1 className={styles.titleSection}> Highest Rated Question </h1>
+		  <p className={styles.excerpt}> The <b>most positively rated</b> question by respondents at <b>{props.school_name}</b> was <b>"{props.max_item_name}"</b>. </p>
+		  <img className={styles.avatar} src={props.happy_gif}></img>
+		</div>
+	</div>
 const SectionLow = props =>
-    <div className={styles.user}>
-        <p className={styles.descriptionFactor}> Students at <b>{props.school_name}</b> rated <b>{props.factor_low_name}</b> least positively when compared to other high schools in that also took the Overall School Experience survey.</p>
-        <img className={styles.avatar} src="https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993"></img>
-    </div>
-
+	<div className={styles.userFactor}>
+	  <div className={styles.descriptionFactor}>
+	    <h1 className={styles.titleSection}> Lowest Rated Summary Measure </h1>
+		<p className={styles.excerpt}> Respondents at <b>{props.school_name}</b> rated <b>{props.min_factor_name}</b> least positively when compared to other {props.level} schools in that also took the <b>{props.product}</b>. {props.min_factor_description} </p>
+		<img className={styles.avatar} src={props.sad_gif}></img>
+	  </div>
+	</div>
 const QuestionLow = props =>
-    <div className={styles.user}>
-        <img className={styles.avatar} src="https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993"></img>
-        <p className={styles.descriptionItem}> The <b>least positively rated</b> question by students at <b>{props.school_name}</b> was <b>{props.item_low_name}</b> </p>
-    </div>
-
-const Title = props =>
-    <div>
-        <p>The highest factor was: {props.factor_high_name}</p>
-        <p>The lowest factor was: {props.factor_low_name}</p>
-        <p>{props.response_count}</p>
-        <p>{props.item_low_name}</p>
-        <p>{props.item_high_name}</p>
-        <p>{props.response_rate}</p>
-    </div>
-
+    <div className={styles.userItem}>
+	  <div className={styles.descriptionItem}>
+	    <h1 className={styles.titleSection}> Lowest Rated Question </h1>
+		<p className={styles.excerpt}> The <b>least positively rated</b> question by respondents at <b>{props.school_name}</b> was <b>"{props.min_item_name}"</b>. </p>
+		<img className={styles.avatar} src={props.sad_gif}></img>
+	  </div>
+	</div>
 const Response = props =>
-    <div className={styles.user}>
-      <p className={styles.description}><b>{props.response_count}</b> {props.school_name} students responded to the Youth Truth Overall School Experience survey. A response rate of <b>{props.response_rate}</b>!</p>
-    <div className={styles.avatar}>
-      <svg width="100%" height="100%" viewBox="0 0 42 42" className="donut">
-      <circle className="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
-      <circle className="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" strokeWidth="3"></circle>
-      <circle className="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0fb2cb" strokeWidth="3" strokeDasharray={props.donut_specs} strokeDashoffset="25"></circle>
-      </svg>
-    </div>
-    </div>
+    <div className={styles.user}>
+      <p className={styles.description}><b>{props.response_count}</b> {props.school_name} stakeholders responded to the Youth Truth <b>{props.product}</b>.</p>
+	  <div className={styles.avatar}>
+		  <svg width="100%" height="100%" viewBox="0 0 42 42" className="donut">
+			<circle className="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+			<circle className="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" strokeWidth="3"></circle>
+			<circle className="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0fb2cb" strokeWidth="3" strokeDasharray={props.response_rate_str}  strokeDashoffset="25"></circle>
+			  <g className={styles.charttext}>
+				<text x="50%" y="50%" className={styles.chartnumber}>
+				  {props.response_rate}%
+				</text>
+				<text x="50%" y="50%" className={styles.chartlabel}>
+				  Response Rate
+				</text>
+			  </g>
+		  </svg>
+	  </div>
+    </div>
+const Title = props =>
+	<div>
+		<h1 className={styles.title}>{props.school_name}</h1>
+			<h2 className={styles.title}> {props.product}</h2>
+	</div>
 
-export default ({ data }) => {
-  return(
-    <div>
-    <h1>{data.dataJson.school_name}</h1>
-    <Response
-      response_count={data.dataJson.response_count}
-      response_rate={data.dataJson.response_rate}
-      school_name={data.dataJson.school_name}
-      donut_specs={data.dataJson.response_rate.substring(0,data.dataJson.response_rate.length - 1) + " " + String(100 - parseInt(data.dataJson.response_rate.substring(0,data.dataJson.response_rate.length - 1)))}
-    />
-    <SectionHigh
-      factor_high_name={data.dataJson.factor_high_name}
-      school_name={data.dataJson.school_name}
-    />
-    <QuestionHigh
-      item_high_name={data.dataJson.item_high_name}
-      school_name={data.dataJson.school_name}
-    />
-    <SectionLow
-      factor_low_name={data.dataJson.factor_low_name}
-      school_name={data.dataJson.school_name}
-    />
-    <QuestionLow
-      item_low_name={data.dataJson.item_low_name}
-      school_name={data.dataJson.school_name}
-    />
+export default ({ data }) =>{
+	return(
+	  <div>
+		<Title
+		  school_name={data.dataJson.school_name}
+		  product={data.dataJson.product}
+		/>
+		<Response
+		  response_count={data.dataJson.response_count}
+		  response_rate={data.dataJson.response_rate}
+		  school_name={data.dataJson.school_name}
+		  response_rate_str={data.dataJson.response_rate_str}
+		  product={data.dataJson.product}
+		/>
+		<SectionHigh
+		  max_factor_name={data.dataJson.max_factor_name}
+		  school_name={data.dataJson.school_name}
+		  max_factor_description={data.dataJson.max_factor_description}
+		  happy_gif={data.dataJson.happy_gif}
+		  product={data.dataJson.product}
+		  level = {data.dataJson.level}
+		/>
+		<QuestionHigh
+		  max_item_name={data.dataJson.max_item_name}
+		  school_name={data.dataJson.school_name}
+		  happy_gif={data.dataJson.happy_gif}
+		/>
+		<SectionLow
+		  min_factor_name={data.dataJson.min_factor_name}
+		  school_name={data.dataJson.school_name}
+		  min_factor_description={data.dataJson.min_factor_description}
+		  sad_gif={data.dataJson.sad_gif}
+		  product={data.dataJson.product}
+		  level = {data.dataJson.level}
+		/>
+		<QuestionLow
+		  min_item_name={data.dataJson.min_item_name}
+		  school_name={data.dataJson.school_name}
+		  sad_gif={data.dataJson.sad_gif}
+		/>
 
-    </div>
-  )
- }
+	  </div>
+	)
+  }
 
-export 
-const query = graphql`
-  query BlogPostQuery($slug: String!) {
-    dataJson(fields: { slug: { eq: $slug } }) {
-      factor_high_name
+
+export const query = graphql`
+  query LayoutQuery {
+    dataJson {
+      max_factor_name
       response_count
       school_name
-      factor_low_name
-      item_low_name
-      item_high_name
+      min_factor_name
+      min_item_name
+      max_item_name
       response_rate
+	  product
+	  level
+	  happy_gif
+	  sad_gif
+	  max_factor_description
+	  min_factor_description
+	  response_rate_str
     }
-  }
-`;
+}
+`
 
