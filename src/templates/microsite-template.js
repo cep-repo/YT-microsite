@@ -48,7 +48,7 @@ const Response = props =>
 				<text x="50%" y="50%" className={styles.chartnumber}>
 				  {props.response_rate}%
 				</text>
-				<text x="50%" y="50%" className={styles.chartlabel}>
+				<text x="50%" y="45%" className={styles.chartlabel}>
 				  Response Rate
 				</text>
 			  </g>
