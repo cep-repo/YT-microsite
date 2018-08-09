@@ -55,31 +55,53 @@ const Response = props =>
 		  </svg>
 	  </div>
     </div>
+const FamResponse = props =>
+    <div className={styles.user}>
+      <p className={styles.description}><b>{props.response_count}</b> {props.school_name} stakeholders responded to the YouthTruth <b>{props.product}</b>.</p>
+    </div>
 const Title = props =>
 	<div>
 		<h1 className={styles.title}>{props.school_name}</h1>
 			<h2 className={styles.title}> {props.product}</h2>
 	</div>
 const WordCloud = props =>
-	<div>
-		<img src={props.wordcloud_url}/>
+	<div className={styles.user}>
+	  <div className={styles.descriptionFactor}>
+		<h1 className={styles.titleSection}>Word Cloud from {props.school_name} Comments</h1>
+		<div className={styles.parent}>
+			<img className={styles.cloud} src={props.wordcloud_url}></img>
+			<img className={styles.bubblemid} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubbleright} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubbleleft} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubblemidright} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubblemidleft} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+		</div>
+	  </div>
 	</div>
 
 
 export default ({ data }) =>{
+	let response_comp
+	if (data.dataJson.product=="family survey"){
+		response_comp =<FamResponse
+				response_count={data.dataJson.response_count}
+				school_name={data.dataJson.school_name}
+				product={data.dataJson.product}/> 
+	}else{
+		response_comp = <Response
+				  response_count={data.dataJson.response_count}
+				  response_rate={data.dataJson.response_rate}
+				  school_name={data.dataJson.school_name}
+				  response_rate_str={data.dataJson.response_rate_str}
+				  product={data.dataJson.product}/>
+	}
 	return(
 	  <div>
 		<Title
 		  school_name={data.dataJson.school_name}
 		  product={data.dataJson.product}
 		/>
-		<Response
-		  response_count={data.dataJson.response_count}
-		  response_rate={data.dataJson.response_rate}
-		  school_name={data.dataJson.school_name}
-		  response_rate_str={data.dataJson.response_rate_str}
-		  product={data.dataJson.product}
-		/>
+		{response_comp}
 		<SectionHigh
 		  max_factor_name={data.dataJson.max_factor_name}
 		  school_name={data.dataJson.school_name}
@@ -107,6 +129,7 @@ export default ({ data }) =>{
 		  sad_gif={data.dataJson.sad_gif}
 		/>
 		<WordCloud
+			school_name={data.dataJson.school_name}
 			wordcloud_url={data.dataJson.wordcloud_url}
 		/>
 
