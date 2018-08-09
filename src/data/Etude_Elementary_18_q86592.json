@@ -1,0 +1,17 @@
+{
+    "product": "Overall School Experience", 
+    "min_factor_name": "Academic Rigor & Expectations", 
+    "response_rate_str": "99 1", 
+    "wordcloud_url": "https://s3.amazonaws.com/CEP_IGNITE_PROD/wordcloud.png", 
+    "school_name": "Etude Elementary School", 
+    "min_item_name": "My teachers let me give up when the work gets hard*", 
+    "max_factor_description": "This summary measure describes the degree to which students perceive themselves as engaged with their school and their education.", 
+    "sad_gif": "https://media1.tenor.com/images/78d9dbd09eec10c041340391b0ad3fbc/tenor.gif?itemid=5178993", 
+    "level": "elementary", 
+    "response_count": "84", 
+    "happy_gif": "https://media1.tenor.com/images/80556186b94ecaff7a570a9c8148fb00/tenor.gif?itemid=4535602", 
+    "max_item_name": "I can find the things I need in my classroom", 
+    "max_factor_name": "Student Engagement", 
+    "response_rate": 99, 
+    "min_factor_description": "This summary measure describes the degree to which students are challenged and supported in their learning."
+}
