@@ -17,6 +17,7 @@
     "gatsby-transformer-json": "^1.0.20",
     "gatsby-transformer-remark": "^1.7.44",
     "glamorous": "^4.13.1",
+    "npm": "^6.3.0",
     "typography-theme-kirkham": "^0.16.3"
   }
 }
