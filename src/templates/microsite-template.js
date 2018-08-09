@@ -68,7 +68,14 @@ const WordCloud = props =>
 	<div className={styles.user}>
 	  <div className={styles.descriptionFactor}>
 		<h1 className={styles.titleSection}>Word Cloud from {props.school_name} Comments</h1>
-		<img src={props.wordcloud_url}></img>
+		<div className={styles.parent}>
+			<img className={styles.cloud} src={props.wordcloud_url}></img>
+			<img className={styles.bubblemid} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubbleright} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubbleleft} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubblemidright} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+			<img className={styles.bubblemidleft} src="https://s3.amazonaws.com/uploads.hipchat.com/283731/5049577/wpWFCqJKrod9HwU/Untitled%20design%20%283%29.png"></img>
+		</div>
 	  </div>
 	</div>
 

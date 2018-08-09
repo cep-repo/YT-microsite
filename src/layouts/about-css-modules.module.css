@@ -33,9 +33,7 @@
   height: 300px;
   margin: 0;
 }
-.cloud {
-  align-items: center;
-}
+
 
 .descriptionItem {
   text-align:center;
@@ -99,4 +97,51 @@
   -ms-transform: translateY(0.7em);
   -webkit-transform: translateY(0.7em);
   transform: translateY(0.7em);
+}
+
+.cloud{
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.bubbleleft{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	height:15%;
+	width:15%;
+}
+.bubblemidleft{
+	position: absolute;
+	top: 20px;
+	left: 125px;
+	height:15%;
+	width:15%;
+}
+.bubblemid{
+	position: absolute;
+    top: 20px;
+    left: 250px;
+	height:15%;
+	width:15%;
+}
+.bubbleright{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	height:15%;
+	width:15%;
+}
+.bubblemidright{
+	position: absolute;
+	top: 20px;
+	right: 125px;
+	height:15%;
+	width:15%;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
 }
